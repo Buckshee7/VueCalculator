@@ -17,6 +17,13 @@ describe('App.vue', () => {
     expect(wrapper.vm.runningTotal).to.equal(3)
   })
 
+  it('multiply function changes running total', () => {
+    const wrapper = shallowMount(App)
+    wrapper.vm.previousTotal = 3
+    wrapper.vm.multiply('5');
+    expect(wrapper.vm.runningTotal).to.equal(15)
+  })
+
   
 
 })
