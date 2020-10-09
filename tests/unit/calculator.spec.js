@@ -33,11 +33,21 @@ describe('App.vue', () => {
 
   it('clear function zeroes running total without affecting the calcuation', () => {
     const wrapper = shallowMount(App)
-    wrapper.previousTotal = 10
+    wrapper.vm.previousTotal = 10
     wrapper.vm.runningTotal = 5
     wrapper.vm.clearClick();
     expect(wrapper.vm.previousTotal).to.equal(10)
     expect(wrapper.vm.runningTotal).to.equal(0)
+  })
+
+  it('concatenates multiple number button clicks', () => {
+    const wrapper = shallowMount(App)
+    wrapper.vm.numberClick(5)
+    wrapper.vm.numberClick(4)
+    wrapper.vm.numberClick(3)
+    wrapper.vm.numberClick(2)
+    wrapper.vm.numberClick(1)
+    expect(wrapper.vm.runningTotal).to.equal(54321)
   })
 
 
