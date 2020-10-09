@@ -69,6 +69,14 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '777777777777777')
   })
 
+  it('should give specific error "DivideByZero Error" when trying to divide by zero', () => {
+    cy.get('#number1').click();
+    cy.get('#operator_divide').click();
+    cy.get('#number0').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', 'DivideByZero Error')
+  })
+
 
 })
 
