@@ -39,13 +39,12 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '-6')
   })
 
-  it('should give expected result for negative numbers as input', () => {
-    cy.get('#operator_subtract').click();
-    cy.get('#number2').click();
-    cy.get('#operator_subtract').click();
-    cy.get('#number8').click();
+  it('should give expected result for decimal number as output', () => {
+    cy.get('#number1').click();
+    cy.get('#operator_divide').click();
+    cy.get('#number4').click();
     cy.get('#operator_equals').click();
-    cy.get('.display').should('contain', '-610')
+    cy.get('.display').should('contain', '0.25')
   })
 
 
