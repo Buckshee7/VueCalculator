@@ -47,6 +47,28 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '0.25')
   })
 
+  it('should give expected result for very large number as input&output', () => {
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#number1').click();
+    cy.get('#operator_multiply').click();
+    cy.get('#number7').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '777777777777777')
+  })
+
 
 })
 
