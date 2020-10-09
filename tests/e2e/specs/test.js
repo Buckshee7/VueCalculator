@@ -31,6 +31,23 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '1')
   })
 
+  it('should give expected result for negative numbers as output', () => {
+    cy.get('#number2').click();
+    cy.get('#operator_subtract').click();
+    cy.get('#number8').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '-6')
+  })
+
+  it('should give expected result for negative numbers as input', () => {
+    cy.get('#operator_subtract').click();
+    cy.get('#number2').click();
+    cy.get('#operator_subtract').click();
+    cy.get('#number8').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '-610')
+  })
+
 
 })
 
