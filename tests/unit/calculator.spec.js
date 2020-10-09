@@ -24,6 +24,6 @@ describe('App.vue', () => {
     expect(wrapper.vm.runningTotal).to.equal(15)
   })
 
-  
+
 
 })
