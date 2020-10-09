@@ -31,4 +31,15 @@ describe('App.vue', () => {
     expect(wrapper.vm.runningTotal).to.equal(3)
   })
 
+  it('clear function zeroes running total without affecting the calcuation', () => {
+    const wrapper = shallowMount(App)
+    wrapper.previousTotal = 10
+    wrapper.vm.runningTotal = 5
+    wrapper.vm.clearClick();
+    expect(wrapper.vm.previousTotal).to.equal(10)
+    expect(wrapper.vm.runningTotal).to.equal(0)
+  })
+
+
+
 })
